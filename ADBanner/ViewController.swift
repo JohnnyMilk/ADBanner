@@ -22,8 +22,6 @@ class ViewController: UIViewController, MLBannerViewBehaviorDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        //let myBanner = MLBannerView(frame: view.frame)
         myBanner.setNumberOfPages(7)
         myBanner.delegate = self
         

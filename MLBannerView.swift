@@ -20,34 +20,23 @@ extension MLBannerViewBehaviorDelegate {
 }
 
 class MLBannerView: UIView, UIScrollViewDelegate {
-    private var scrollView: UIScrollView
-    private var pageControl: UIPageControl
-    private var timer: Timer
-    var bannerList: [UIView]
+    private var scrollView = UIScrollView()
+    private var pageControl = UIPageControl()
+    private var timer = Timer()
+    var bannerList = [UIView]()
     var delegate: MLBannerViewBehaviorDelegate?
     
     override init(frame: CGRect) {
-        scrollView = UIScrollView()
-        pageControl = UIPageControl()
-        timer = Timer()
-        bannerList = [UIView]()
         super.init(frame: frame)
-    
-        addSubview(scrollView)
-        scrollViewSetting()
-        addSubview(pageControl)
-        pageControlSetting()
-        bannerListSetting()
-        tapGestureRecognizerSetting()
+        initTemplateMethod()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        scrollView = UIScrollView()
-        pageControl = UIPageControl()
-        timer = Timer()
-        bannerList = [UIView]()
         super.init(coder: aDecoder)
-        
+        initTemplateMethod()
+    }
+    
+    private func initTemplateMethod() {
         addSubview(scrollView)
         scrollViewSetting()
         addSubview(pageControl)
